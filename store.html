@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Store - V-Social</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="top_header">
+
+    <div class="logo">
+        V<span>Social</span>
+    </div>
+
+
+    <div class="search_box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            placeholder="Search products, stores or people"
+        >
+
+    </div>
+
+
+    <div class="header_actions">
+
+        <button>
+            <i class="fa-solid fa-bell"></i>
+        </button>
+
+        <button>
+            <i class="fa-solid fa-message"></i>
+        </button>
+
+        <div class="profile_small">
+
+            <img
+                src="https://i.pravatar.cc/100?img=12"
+            >
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= STORE ================= -->
+
+<main class="store_page">
+
+
+    <!-- STORE COVER -->
+
+    <section class="store_cover">
+
+        <div class="store_cover_content">
+
+            <div class="store_logo">
+
+                <i class="fa-solid fa-store"></i>
+
+            </div>
+
+            <div>
+
+                <h1>My Store</h1>
+
+                <p>
+                    @mystore
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STORE INFORMATION -->
+
+    <section class="store_information">
+
+        <div class="store_details">
+
+            <h2>My Store</h2>
+
+            <p>
+                Welcome to my store. Discover quality
+                products at great prices.
+            </p>
+
+            <div class="store_meta">
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Nigeria
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-box"></i>
+                    <strong id="productCount">0</strong>
+                    Products
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-user-group"></i>
+                    0 Followers
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="store_actions">
+
+            <button class="edit_store_btn">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit Store
+
+            </button>
+
+            <button
+                class="add_product_store_btn"
+                id="storeAddProduct"
+            >
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Product
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STORE NAVIGATION -->
+
+    <nav class="store_nav">
+
+        <button class="active">
+            Products
+        </button>
+
+        <button>
+            About
+        </button>
+
+        <button>
+            Reviews
+        </button>
+
+    </nav>
+
+
+
+    <!-- PRODUCTS -->
+
+    <section class="store_products">
+
+        <div class="products_header">
+
+            <div>
+
+                <h2>Products</h2>
+
+                <p>
+                    Products available in this store
+                </p>
+
+            </div>
+
+
+            <select id="sortProducts">
+
+                <option value="newest">
+                    Newest
+                </option>
+
+                <option value="priceLow">
+                    Price: Low to High
+                </option>
+
+                <option value="priceHigh">
+                    Price: High to Low
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div
+            class="product_grid"
+            id="storeProducts"
+        >
+
+            <!-- PRODUCTS WILL APPEAR HERE -->
+
+        </div>
+
+
+        <div
+            id="emptyStore"
+            class="empty_store"
+        >
+
+            <i class="fa-solid fa-store"></i>
+
+            <h3>Your store is empty</h3>
+
+            <p>
+                Add your first product to start selling.
+            </p>
+
+            <button id="emptyAddProduct">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Product
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================= BOTTOM NAV ================= -->
+
+<nav class="bottom_nav">
+
+    <button>
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Home</span>
+
+    </button>
+
+
+    <button>
+
+        <i class="fa-solid fa-store"></i>
+
+        <span>Market</span>
+
+    </button>
+
+
+    <button class="create_nav">
+
+        <i class="fa-solid fa-plus"></i>
+
+    </button>
+
+
+    <button>
+
+        <i class="fa-solid fa-bell"></i>
+
+        <span>Alerts</span>
+
+    </button>
+
+
+    <button>
+
+        <i class="fa-solid fa-message"></i>
+
+        <span>Chat</span>
+
+    </button>
+
+</nav>
+
+
+<script src="store.js"></script>
+
+</body>
+
+</html>

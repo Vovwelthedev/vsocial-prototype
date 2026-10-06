@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>V-Social</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="top_header">
+
+    <div class="logo">
+        V<span>Social</span>
+    </div>
+
+    <div class="search_box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search products, stores or people">
+    </div>
+
+    <div class="header_actions">
+
+        <button>
+            <i class="fa-solid fa-plus"></i>
+        </button>
+
+        <button>
+            <i class="fa-solid fa-bag-shopping"></i>
+        </button>
+
+        <div class="profile_small">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Profile">
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="main_container">
+
+
+    <!-- ========== LEFT SIDEBAR ========== -->
+
+    <aside class="left_sidebar">
+
+        <div class="profile_card">
+
+            <img src="https://i.pravatar.cc/120?img=12" alt="Profile">
+
+            <div>
+                <h3>Godwill</h3>
+                <p>@godwill</p>
+            </div>
+
+        </div>
+
+
+        <nav class="side_menu">
+
+            <a class="active">
+                <i class="fa-solid fa-house"></i>
+                Home
+            </a>
+
+            <a>
+                <i class="fa-solid fa-store"></i>
+                Marketplace
+            </a>
+
+            <a>
+                <i class="fa-solid fa-shop"></i>
+                Stores
+            </a>
+
+            <a>
+                <i class="fa-solid fa-user-group"></i>
+                Following
+            </a>
+
+            <a>
+                <i class="fa-solid fa-bookmark"></i>
+                Saved
+            </a>
+
+            <a>
+                <i class="fa-solid fa-message"></i>
+                Messages
+            </a>
+
+            <a>
+                <i class="fa-solid fa-bell"></i>
+                Notifications
+            </a>
+
+        </nav>
+
+
+        <button class="create_store_btn">
+            <i class="fa-solid fa-store"></i>
+            Create a Store
+        </button>
+
+        <button class="create_store_btn" id="openProductModal">
+            <i class="fa-solid fa-plus"></i>
+            Add Product
+        </button>
+
+    </aside>
+
+
+
+    <!-- ========== FEED ========== -->
+
+    <section class="feed">
+
+
+        <!-- STORIES -->
+
+        <section class="stories">
+
+            <div class="story add_story">
+
+                <div class="story_image">
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+
+                <span>Your story</span>
+
+            </div>
+
+
+            <div class="story">
+
+                <img src="https://i.pravatar.cc/150?img=32">
+
+                <span>Sarah</span>
+
+            </div>
+
+
+            <div class="story">
+
+                <img src="https://i.pravatar.cc/150?img=45">
+
+                <span>David</span>
+
+            </div>
+
+
+            <div class="story">
+
+                <img src="https://i.pravatar.cc/150?img=25">
+
+                <span>Chika</span>
+
+            </div>
+
+
+            <div class="story">
+
+                <img src="https://i.pravatar.cc/150?img=13">
+
+                <span>Michael</span>
+
+            </div>
+
+
+            <div class="story">
+
+                <img src="https://i.pravatar.cc/150?img=47">
+
+                <span>Amaka</span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FEED TABS -->
+
+       <div class="feed_tabs">
+
+    <button class="feed_tab active" data-tab="forYou">
+        For You
+    </button>
+
+    <button class="feed_tab" data-tab="following">
+        Following
+    </button>
+
+    <button class="feed_tab" data-tab="stores">
+        Stores
+    </button>
+
+</div>
+
+
+<!-- STORE PRODUCTS -->
+
+<section id="storeFeed" class="store_feed">
+
+    <div class="store_feed_header">
+
+        <div>
+            <h2>Stores</h2>
+            <p>Products from stores you can shop</p>
+        </div>
+
+        <button>
+            See all
+        </button>
+
+    </div>
+
+    <div
+        id="storeFeedProducts"
+        class="store_feed_grid"
+    ></div>
+
+</section>
+
+
+
+        <!-- CREATE POST -->
+
+        <section class="create_post">
+
+            <div class="create_top">
+
+                <img
+                    src="https://i.pravatar.cc/100?img=12"
+                    alt="Profile"
+                >
+
+                <textarea
+                    id="caption"
+                    placeholder="What are you selling or sharing?"
+                ></textarea>
+
+            </div>
+
+
+            <div
+                id="preview_container"
+                class="preview_container"
+            >
+
+                <img id="previewImage" alt="Preview">
+
+            </div>
+
+
+            <div class="create_bottom">
+
+                <label for="postImage" class="create_option">
+
+                    <i class="fa-solid fa-image"></i>
+
+                    Photo
+
+                </label>
+
+                <input
+                    type="file"
+                    id="postImage"
+                    accept="image/*"
+                    hidden
+                >
+
+
+                <button class="create_option">
+
+                    <i class="fa-solid fa-video"></i>
+
+                    Video
+
+                </button>
+
+
+                <button class="create_option">
+
+                    <i class="fa-solid fa-tag"></i>
+
+                    Product
+
+                </button>
+
+
+                <button
+                    id="postBtn"
+                    class="post_button"
+                >
+
+                    Post
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= POST 1 ================= -->
+
+        <article class="post">
+
+            <div class="post_header">
+
+                <div class="post_user">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=32"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>Sarah's Fashion</strong>
+
+                        <span>@sarahfashion · 2h</span>
+
+                    </div>
+
+                </div>
+
+                <button class="more_button">
+
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                </button>
+
+            </div>
+
+
+            <p class="post_text">
+
+                New arrivals are here! 🔥
+
+                Premium sneakers available in different sizes.
+
+                Delivery available nationwide.
+
+            </p>
+
+
+            <img
+                class="post_image"
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+                alt="Sneakers"
+            >
+
+
+            <div class="product_tag">
+
+                <div>
+
+                    <strong>Premium Sneakers</strong>
+
+                    <span>Available in store</span>
+
+                </div>
+
+                <strong>₦45,000</strong>
+
+            </div>
+
+
+            <div class="post_actions">
+
+                <button class="like_button">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span>124</span>
+
+                </button>
+
+                <button>
+
+                    <i class="fa-regular fa-comment"></i>
+
+                    <span>28</span>
+
+                </button>
+
+                <button>
+
+                    <i class="fa-solid fa-share"></i>
+
+                    <span>Share</span>
+
+                </button>
+
+                <button class="save_button">
+
+                    <i class="fa-regular fa-bookmark"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- ================= POST 2 ================= -->
+
+        <article class="post">
+
+            <div class="post_header">
+
+                <div class="post_user">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=45"
+                        alt=""
+                    >
+
+                    <div>
+
+                        <strong>Tech Haven</strong>
+
+                        <span>@techhaven · 5h</span>
+
+                    </div>
+
+                </div>
+
+                <button class="more_button">
+
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                </button>
+
+            </div>
+
+
+            <p class="post_text">
+
+                Looking for a reliable laptop for coding?
+
+                Check out our latest arrivals.
+
+            </p>
+
+
+            <img
+                class="post_image"
+                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1000&q=80"
+                alt="Laptop"
+            >
+
+
+            <div class="product_tag">
+
+                <div>
+
+                    <strong>HP Laptop</strong>
+
+                    <span>8GB RAM · 256GB SSD</span>
+
+                </div>
+
+                <strong>₦280,000</strong>
+
+            </div>
+
+
+            <div class="post_actions">
+
+                <button class="like_button">
+
+                    <i class="fa-regular fa-heart"></i>
+
+                    <span>87</span>
+
+                </button>
+
+                <button>
+
+                    <i class="fa-regular fa-comment"></i>
+
+                    <span>14</span>
+
+                </button>
+
+                <button>
+
+                    <i class="fa-solid fa-share"></i>
+
+                    <span>Share</span>
+
+                </button>
+
+                <button class="save_button">
+
+                    <i class="fa-regular fa-bookmark"></i>
+
+                </button>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- ========== RIGHT SIDEBAR ========== -->
+
+    <aside class="right_sidebar">
+
+
+        <!-- TRENDING -->
+
+        <section class="side_card">
+
+            <div class="side_title">
+
+                <h3>Trending Products</h3>
+
+                <a>See all</a>
+
+            </div>
+
+
+            <div class="trend_item">
+
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=300&q=80">
+
+                <div>
+
+                    <strong>Luxury Watch</strong>
+
+                    <span>₦180,000</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="trend_item">
+
+                <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=300&q=80">
+
+                <div>
+
+                    <strong>Wireless Earbuds</strong>
+
+                    <span>₦35,000</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="trend_item">
+
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=300&q=80">
+
+                <div>
+
+                    <strong>Smartphone</strong>
+
+                    <span>₦420,000</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- SUGGESTED STORES -->
+
+        <section class="side_card">
+
+            <div class="side_title">
+
+                <h3>Stores to follow</h3>
+
+                <a>See all</a>
+
+            </div>
+
+
+            <div class="suggestion">
+
+                <img src="https://i.pravatar.cc/100?img=51">
+
+                <div>
+
+                    <strong>V Fashion</strong>
+
+                    <span>Fashion Store</span>
+
+                </div>
+
+                <button>Follow</button>
+
+            </div>
+
+
+            <div class="suggestion">
+
+                <img src="https://i.pravatar.cc/100?img=52">
+
+                <div>
+
+                    <strong>Gadget Hub</strong>
+
+                    <span>Electronics</span>
+
+                </div>
+
+                <button>Follow</button>
+
+            </div>
+
+
+            <div class="suggestion">
+
+                <img src="https://i.pravatar.cc/100?img=53">
+
+                <div>
+
+                    <strong>Home Decor</strong>
+
+                    <span>Home & Living</span>
+
+                </div>
+
+                <button>Follow</button>
+
+            </div>
+
+        </section>
+
+
+    </aside>
+
+</main>
+
+
+
+<!-- ================= MOBILE NAV ================= -->
+
+<nav class="bottom_nav">
+
+    <button class="bottom_item active">
+
+        <i class="fa-solid fa-house"></i>
+
+        <span>Home</span>
+
+    </button>
+
+
+    <button class="bottom_item">
+
+        <i class="fa-solid fa-store"></i>
+
+        <span>Market</span>
+
+    </button>
+
+
+    <button class="bottom_item create_nav">
+
+        <i class="fa-solid fa-plus"></i>
+
+    </button>
+
+
+    <button class="bottom_item">
+
+        <i class="fa-solid fa-bell"></i>
+
+        <span>Alerts</span>
+
+    </button>
+
+
+    <button class="bottom_item">
+
+        <i class="fa-solid fa-message"></i>
+
+        <span>Chat</span>
+
+    </button>
+
+</nav>
+
+<!-- ================= PRODUCT MODAL ================= -->
+
+<div class="modal" id="productModal">
+
+    <div class="modal_content">
+
+        <div class="modal_header">
+
+            <div>
+                <h2>Add Product</h2>
+                <p>List a product in your store</p>
+            </div>
+
+            <button id="closeProductModal" class="close_modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <form id="productForm">
+
+
+            <!-- PRODUCT IMAGE -->
+
+            <div class="product_upload">
+
+                <label for="productImage">
+
+                    <div class="upload_icon">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+
+                    <strong>Add product photos</strong>
+
+                    <span>
+                        Use clear photos of your product
+                    </span>
+
+                </label>
+
+                <input
+                    type="file"
+                    id="productImage"
+                    accept="image/*"
+                    hidden
+                    required
+                >
+
+                <img
+                    id="productImagePreview"
+                    class="product_image_preview"
+                >
+
+            </div>
+
+
+            <!-- PRODUCT NAME -->
+
+            <div class="form_group">
+
+                <label>Product name</label>
+
+                <input
+                    type="text"
+                    id="productName"
+                    placeholder="e.g. Premium Leather Sneakers"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PRICE -->
+
+            <div class="form_row">
+
+                <div class="form_group">
+
+                    <label>Price (₦)</label>
+
+                    <input
+                        type="number"
+                        id="productPrice"
+                        placeholder="45000"
+                        min="0"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form_group">
+
+                    <label>Discount price (₦)</label>
+
+                    <input
+                        type="number"
+                        id="discountPrice"
+                        placeholder="40000"
+                        min="0"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="form_group">
+
+                <label>Category</label>
+
+                <select id="productCategory" required>
+
+                    <option value="">Select category</option>
+
+                    <option>Fashion</option>
+
+                    <option>Electronics</option>
+
+                    <option>Phones & Tablets</option>
+
+                    <option>Beauty</option>
+
+                    <option>Home & Living</option>
+
+                    <option>Food</option>
+
+                    <option>Automobile</option>
+
+                    <option>Sports</option>
+
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- STOCK -->
+
+            <div class="form_row">
+
+                <div class="form_group">
+
+                    <label>Stock quantity</label>
+
+                    <input
+                        type="number"
+                        id="productStock"
+                        placeholder="10"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form_group">
+
+                    <label>Condition</label>
+
+                    <select id="productCondition">
+
+                        <option>New</option>
+
+                        <option>Used</option>
+
+                        <option>Refurbished</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+
+            <div class="form_group">
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="productLocation"
+                    placeholder="e.g. Warri, Delta State"
+                    required
+                >
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="form_group">
+
+                <label>Product description</label>
+
+                <textarea
+                    id="productDescription"
+                    placeholder="Tell buyers about your product..."
+                    rows="5"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- DELIVERY -->
+
+            <div class="form_group">
+
+                <label>Delivery</label>
+
+                <div class="checkbox_group">
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="localDelivery"
+                        >
+                        Local delivery
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="nationwideDelivery"
+                        >
+                        Nationwide delivery
+                    </label>
+
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="pickupAvailable"
+                        >
+                        Store pickup
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- STORE -->
+
+            <div class="form_group">
+
+                <label>Store</label>
+
+                <select id="productStore">
+
+                    <option>My Store</option>
+
+                </select>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <div class="modal_actions">
+
+                <button
+                    type="button"
+                    id="cancelProduct"
+                    class="cancel_btn"
+                >
+                    Cancel
+                </button>
+
+                <button
+                    type="submit"
+                    class="publish_btn"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Publish Product
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
